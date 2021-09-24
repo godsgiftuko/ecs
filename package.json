@@ -1,0 +1,28 @@
+{
+  "name": "entity_components_sys",
+  "version": "1.0.0",
+  "description": "A simple starter project with typescript, on entity components system architecture. ",
+  "main": "app.ts",
+  "type": "module",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/test.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegodsgift/ecs.git"
+  },
+  "author": "thegodsgift",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thegodsgift/ecs/issues"
+  },
+  "homepage": "https://github.com/thegodsgift/ecs#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}

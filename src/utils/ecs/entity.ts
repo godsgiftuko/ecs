@@ -1,5 +1,9 @@
 import { IComponent } from './component.h';
 
+type constr<T> ={ new (...args: unknown[]): T };
+
+const unknown: unknown[] = []
+
 export abstract class Entity {
     protected _components:[] = [];
 
@@ -12,7 +16,7 @@ export abstract class Entity {
         component.Entity = this;
     }
 
-    public GetComponent <C extends IComponent>(constr: { new (...args: any[]): C }): C {
+    public GetComponent <C extends IComponent>(constr: constr<C>): C {
         for (const component of this._components) {
             if (component instanceof constr) {
                 return component as C;
@@ -40,5 +44,15 @@ export abstract class Entity {
             toRemove.Entity = null;
             this._components.splice(index, 1);
         }
+    }
+
+    public HasComponents<C extends IComponent> (constr: constr<C>):boolean {
+        for (const component of this._components) {
+            if (component instanceof constr) {
+                return true;
+            }
+
+        }
+        return false;
     }
 }
